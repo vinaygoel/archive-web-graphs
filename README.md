@@ -1,5 +1,5 @@
 Vinay Goel
-vinay@archive.org
+(vinay@archive.org)
 
 This project contains Apache Pig scripts and UDFs for building and analyzing archival web graphs.
 
