@@ -33,7 +33,12 @@ IDMap = LOAD '$I_ID_MAP_DIR' as (id:chararray, url:chararray);
 IDR = FOREACH IDMap GENERATE url as key, 'm' as type, id as value;
 IDR = DISTINCT IDR;
 
-Links = FOREACH Links GENERATE src, timestamp, MD5((chararray)CONCAT(src,timestamp)) as capid, dst;
+Links = FOREACH Links GENERATE src, timestamp, (chararray)CONCAT(src,timestamp) as srcTs, dst;
+Links = FILTER Links BY srcTs is not null;
+
+Links = FOREACH Links GENERATE src, timestamp, MD5(srcTs) as capid, dst;
+
+
 
 -- time relation
 TR = FOREACH Links GENERATE timestamp as key, 't' as type, capid as value;
