@@ -22,7 +22,5 @@
 %default O_ID_LINKS_DIR 'congress109th-sample/id-links.gz';
 
 Graph = LOAD '$I_ID_GRAPH_DIR' as (src:chararray, timestamp:chararray, dests:{dest:(dst:chararray)});
-
 Links = FOREACH Graph GENERATE src, timestamp, FLATTEN(dests) as dst;
-
 STORE Links into '$O_ID_LINKS_DIR';
