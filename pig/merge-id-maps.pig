@@ -14,7 +14,7 @@
  * permissions and limitations under the License.
  */
 
-/* Input: A set of archival web graphs to merge - src, timestamp, {set of destinations}
+/* Input: Set of ID-Map data from the graphs to merge
  * Output: A mapping of the merged set of link URLs/IDs to unique integers IDs (id.map) 
  * Output: A mapping of the old node IDs using the unique filenames of the graphs to be merged to the new integer IDs (id.map.translate)
  */
