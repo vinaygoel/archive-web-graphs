@@ -24,7 +24,11 @@
 
 SET pig.splitCombination 'false';
 
-REGISTER lib/ia-hadoop-tools-jar-with-dependencies.jar;
+--CDH4
+--REGISTER lib/ia-web-commons-jar-with-dependencies-CDH4.jar;
+
+--CDH3
+REGISTER lib/ia-web-commons-jar-with-dependencies-CDH3.jar;
 DEFINE URLRESOLVE org.archive.hadoop.func.URLResolverFunc();
 
 -- load data from I_WATS_DIR:
